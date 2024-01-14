@@ -1,8 +1,8 @@
 import React from "react";
 import TobogganList from "./TobogganList";
-// import NewTobogganForm from "./NewTobogganForm";
-// import TobogganDetail from "./TobogganDetail";
-// import EditTobogganForm from "./EditTobogganForm";
+import NewTobogganForm from "./NewTobogganForm";
+import TobogganDetail from "./TobogganDetail";
+import EditTobogganForm from "./EditTobogganForm";
 
 class TobogganControl extends React.Component {
   constructor(props) {
