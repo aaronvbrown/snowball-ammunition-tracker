@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./Header";
-import SnowballControl from "./SnowballControl";
+import TobogganControl from "./TobogganControl";
 
 function App() {
   return (
     <React.Fragment>
       <Header />
-      <SnowballControl />
+      <TobogganControl />
     </React.Fragment>
   );
 }
