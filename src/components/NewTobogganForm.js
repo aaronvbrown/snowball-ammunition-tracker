@@ -15,6 +15,7 @@ function NewTobogganForm(props) {
       id: v4()
     });
   }
+  
   return (
     <React.Fragment>
       <ReusableForm 
@@ -24,8 +25,8 @@ function NewTobogganForm(props) {
   );
 }
 
-NewTobogganForm.PropTypes = {
-  onNewTobogganCreation: PropTypes.func
+NewTobogganForm.propTypes = {
+  onNewTobogganCreation: PropTypes.func.isRequired
 };
 
 export default NewTobogganForm;
