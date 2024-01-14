@@ -25,4 +25,4 @@ TobogganList.PropTypes = {
   onTobogganSelection: PropTypes.func
 };
 
-export default TobogganList
+export default TobogganList;
