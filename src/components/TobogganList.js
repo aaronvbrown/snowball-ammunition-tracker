@@ -14,7 +14,7 @@ function TobogganList(props){
           price={toboggan.price}
           type={toboggan.type}
           id={toboggan.id}
-          key={index}/>
+          key={toboggan.id}/>
       )}
     </React.Fragment>
   );
