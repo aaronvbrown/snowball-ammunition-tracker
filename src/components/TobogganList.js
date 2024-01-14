@@ -1,5 +1,5 @@
 import React  from "react";
-import Tobaggan from "./Tobaggan";
+import Toboggan from "./Toboggan";
 import PropTypes from "prop-types";
 
 function TobogganList(props){
@@ -7,7 +7,7 @@ function TobogganList(props){
     <React.Fragment>
       <hr/>
       {props.tobogganList.map((toboggan, index) =>
-        <Tobaggan
+        <Toboggan
           whenTobogganClicked = { props.onTobogganSelection }
           name={toboggan.name}
           origin={toboggan.origin}
@@ -20,7 +20,7 @@ function TobogganList(props){
   );
 }
 
-TobogganList.PropTypes = {
+TobogganList.propTypes = {
   tobogganList: PropTypes.array,
   onTobogganSelection: PropTypes.func
 };
