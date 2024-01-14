@@ -79,7 +79,7 @@ class TobogganControl extends React.Component {
       currentlyVisibleState = <NewTobogganForm onNewTobogganCreation={this.handleAddingNewTobogganToList} />
       buttonText = "Return to Toboggan List";
     } else {
-      currentlyVisibleState = <TobogganList tobogganList={this.state.mainTobogganList} onTobogganSelection={this.handleChangingSelectedToboggan} />;
+      currentlyVisibleState = <TobogganList onTobogganSelection={this.handleChangingSelectedToboggan} tobogganList={this.state.mainTobogganList} />;
       buttonText = "Add Toboggan";
     }
 
