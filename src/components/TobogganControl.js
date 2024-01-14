@@ -15,6 +15,54 @@ class TobogganControl extends React.Component {
     };
   }
 
+  handleClick = () => {
+    if(this.state.selectedToboggan != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedToboggan: null,
+        editing: false
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
+  }
+
+  handleDeletingToboggan = (id) => { 
+    const newMainTobogganList = this.state.mainTobogganList.filter(toboggan => toboggan.id !== id);
+    this.setState({
+      mainTobogganList: newMainTobogganList,
+      selectedToboggan: null
+    });
+  }
+
+  handleEditClick = () => { 
+    this.setState({editing: true});
+  }
+
+  handleEditingTobogganInList = (tobogganToEdit) => {
+    const editedMainTobogganList = this.state.mainTobogganList
+      .filter(toboggan => toboggan.id !== this.state.selectedToboggan.id)
+      .concat(tobogganToEdit);
+    this.setState({
+        mainTobogganList: editedMainTobogganList,
+        editing: false,
+        selectedToboggan: null
+      });
+  }
+
+  handleAddingNewTobogganToList = (newToboggan) => {
+    const newMainTobogganList = this.state.mainTobogganList.concat(newToboggan);
+    this.setState({mainTobogganList: newMainTobogganList,
+                  formVisibleOnPage: false });
+  }
+
+  handleChangingSelectedToboggan = (id) => {
+    const selectedToboggan = this.state.mainTobogganList.filter(toboggan => toboggan.id === id)[0];
+    this.setState({selectedToboggan: selectedToboggan});
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;

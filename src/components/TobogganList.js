@@ -6,7 +6,7 @@ function TobogganList(props){
   return (
     <React.Fragment>
       <hr/>
-      {props.tobogganList.map((toboggan, index) =>
+      {props.tobogganList.map((toboggan) =>
         <Toboggan
           whenTobogganClicked = { props.onTobogganSelection }
           name={toboggan.name}
