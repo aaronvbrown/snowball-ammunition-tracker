@@ -16,7 +16,7 @@ class TobogganControl extends React.Component {
   }
 
   handleClick = () => {
-    if(this.state.selectedToboggan != null) {
+    if (this.state.selectedToboggan != null) {
       this.setState({
         formVisibleOnPage: false,
         selectedToboggan: null,
@@ -29,7 +29,11 @@ class TobogganControl extends React.Component {
     }
   }
 
-  handleDeletingToboggan = (id) => { 
+  handleEditClick = () => {
+    this.setState({ editing: true });
+  }
+
+  handleDeletingToboggan = (id) => {
     const newMainTobogganList = this.state.mainTobogganList.filter(toboggan => toboggan.id !== id);
     this.setState({
       mainTobogganList: newMainTobogganList,
@@ -37,8 +41,12 @@ class TobogganControl extends React.Component {
     });
   }
 
-  handleEditClick = () => { 
-    this.setState({editing: true});
+  handleAddingNewTobogganToList = (newToboggan) => {
+    const newMainTobogganList = this.state.mainTobogganList.concat(newToboggan);
+    this.setState({
+      mainTobogganList: newMainTobogganList,
+      formVisibleOnPage: false
+    });
   }
 
   handleEditingTobogganInList = (tobogganToEdit) => {
@@ -46,34 +54,29 @@ class TobogganControl extends React.Component {
       .filter(toboggan => toboggan.id !== this.state.selectedToboggan.id)
       .concat(tobogganToEdit);
     this.setState({
-        mainTobogganList: editedMainTobogganList,
-        editing: false,
-        selectedToboggan: null
-      });
+      mainTobogganList: editedMainTobogganList,
+      editing: false,
+      selectedToboggan: null
+    });
   }
 
-  handleAddingNewTobogganToList = (newToboggan) => {
-    const newMainTobogganList = this.state.mainTobogganList.concat(newToboggan);
-    this.setState({mainTobogganList: newMainTobogganList,
-                  formVisibleOnPage: false });
-  }
 
   handleChangingSelectedToboggan = (id) => {
     const selectedToboggan = this.state.mainTobogganList.filter(toboggan => toboggan.id === id)[0];
-    this.setState({selectedToboggan: selectedToboggan});
+    this.setState({ selectedToboggan: selectedToboggan });
   }
 
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.editing ) {
-      currentlyVisibleState = <EditTobogganForm toboggan = {this.state.selectedToboggan} onEditToboggan = {this.handleEditingTobogganInList} />
+    if (this.state.editing) {
+      currentlyVisibleState = <EditTobogganForm toboggan={this.state.selectedToboggan} onEditToboggan={this.handleEditingTobogganInList} />
       buttonText = "Return to Toboggan List";
     } else if (this.state.selectedToboggan != null) {
-      currentlyVisibleState = <TobogganDetail 
-        toboggan = {this.state.selectedToboggan} 
-        onClickingDelete = {this.handleDeletingToboggan} 
-        onClickingEdit = {this.handleEditClick} />
+      currentlyVisibleState = <TobogganDetail
+        toboggan={this.state.selectedToboggan}
+        onClickingDelete={this.handleDeletingToboggan}
+        onClickingEdit={this.handleEditClick} />
       buttonText = "Return to Toboggan List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewTobogganForm onNewTobogganCreation={this.handleAddingNewTobogganToList} />

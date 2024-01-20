@@ -16,15 +16,15 @@ function ReusableForm(props) {
         <input 
           type='text'
           name='price'
-          placeholder='Toboggan Price' />
+          placeholder='Price (Cocoa Units)' />
         <input 
           type='text'
           name='type'
-          placeholder='Toboggan Type' />
+          placeholder='Snowball Type' />
         <input 
           type='number'
           name='inventory'
-          placeholder='Toboggan Inventory' />
+          placeholder='Snowball Inventory' />
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
