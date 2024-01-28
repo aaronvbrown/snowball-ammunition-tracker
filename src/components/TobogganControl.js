@@ -66,6 +66,24 @@ class TobogganControl extends React.Component {
     this.setState({ selectedToboggan: selectedToboggan });
   }
 
+  handleThrowingSnowballFromSelectedToboggan = (tobogganToUse) => {
+    const updatedInventory = tobogganToUse.inventory -1;
+
+    if (updatedInventory >= 1) {
+      const updatedToboggan = {...tobogganToUse, inventory: updatedInventory};
+
+      const editedMainTobogganList = this.state.mainTobogganList
+        .filter(toboggan => toboggan.id !== this.state.selectedToboggan.id)
+        .concat(updatedToboggan);
+
+      this.setState({
+        mainTobogganList: editedMainTobogganList,
+        selectedToboggan: updatedToboggan
+      });
+    }
+  }
+
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
