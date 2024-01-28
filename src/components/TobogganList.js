@@ -1,5 +1,5 @@
 import React  from "react";
-import Toboggan from "./Toboggan";
+import Toboggan from "./Toboggan.js";
 import PropTypes from "prop-types";
 
 function TobogganList(props){
@@ -13,6 +13,7 @@ function TobogganList(props){
           origin={toboggan.origin}
           price={toboggan.price}
           type={toboggan.type}
+          inventory={toboggan.inventory}
           id={toboggan.id}
           key={toboggan.id}/>
       )}
