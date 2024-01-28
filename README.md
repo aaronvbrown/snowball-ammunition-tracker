@@ -33,8 +33,6 @@ Your app is ready to be deployed!
 
 
 ## Known Bugs
-* Missing Inventory Levels
-* Missing Consumption
 * Please report any bugs at the [github repo issues page](https://github.com/aaronvbrown/snowball-ammunition-tracker/issues)
 
 ## Attributions
