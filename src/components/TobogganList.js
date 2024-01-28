@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 
 function TobogganList(props){
   return (
-    <React.Fragment>
-      <hr/>
+    <>
+      <hr />
       {props.tobogganList.map((toboggan) =>
         <Toboggan
           whenTobogganClicked = { props.onTobogganSelection }
@@ -16,8 +16,8 @@ function TobogganList(props){
           id={toboggan.id}
           key={toboggan.id}/>
       )}
-    </React.Fragment>
-  );
+    </>
+  )
 }
 
 TobogganList.propTypes = {

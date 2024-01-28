@@ -19,7 +19,10 @@ This utility allows for tracking snowball inventory levels purchased on toboggan
 ## Setup Requirements
 
 * Clone the repository **git clone https://github.com/aaronvbrown/snowball-ammunition-tracker.git**  in the terminal
-* `npm start` runs the app in the development mode.\
+
+* navigate to the production directory
+* `npm install`
+* `npm run start` runs the app.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
