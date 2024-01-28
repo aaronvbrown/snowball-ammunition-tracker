@@ -94,6 +94,7 @@ class TobogganControl extends React.Component {
       currentlyVisibleState = <TobogganDetail
         toboggan={this.state.selectedToboggan}
         onClickingDelete={this.handleDeletingToboggan}
+        onClickingThrowSnowball={this.handleThrowingSnowballFromSelectedToboggan}
         onClickingEdit={this.handleEditClick} />
       buttonText = "Return to Toboggan List";
     } else if (this.state.formVisibleOnPage) {
