@@ -11,10 +11,11 @@ function TobogganDetail(props) {
   return (
     <React.Fragment>
       <h1>Toboggan Detail</h1>
-      <h3>{toboggan.name} - {toboggan.origin}</h3>
-      <p><em>{toboggan.type}</em></p>
+      <h3>Snowballs Remaining: {toboggan.inventory}  <button onClick={handleThrowingSnowball}>Throw Snowball</button></h3>
+      <p><em>Snowball Type: {toboggan.type}</em></p>
+      <h3>Name: {toboggan.name}</h3>
+      <h3>Origin: {toboggan.origin}</h3>
       <button onClick={ props.onClickingEdit }>Update Toboggan</button>
-      <button onClick={handleThrowingSnowball}>Throw Snowball</button>
       <button onClick={()=> onClickingDelete(toboggan.id) }>Return Empty Toboggan</button>
       <hr/>
     </React.Fragment>
